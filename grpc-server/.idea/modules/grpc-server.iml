@@ -9,6 +9,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../../target/scala-2.13/src_managed/main" isTestSource="false" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../src/main/resources" type="java-resource" />
       <excludeFolder url="file://$MODULE_DIR$/../../target" />
+      <excludeFolder url="file://$MODULE_DIR$/../../target/bg-jobs" />
       <excludeFolder url="file://$MODULE_DIR$/../../target/global-logging" />
       <excludeFolder url="file://$MODULE_DIR$/../../target/protobuf_external" />
       <excludeFolder url="file://$MODULE_DIR$/../../target/protobuf_external_src" />
@@ -17,6 +18,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="sbt: ch.qos.logback:logback-classic:1.2.3:jar" level="project" />
+    <orderEntry type="library" name="sbt: ch.qos.logback:logback-core:1.2.3:jar" level="project" />
     <orderEntry type="library" name="sbt: co.fs2:fs2-core_2.13:2.3.0:jar" level="project" />
     <orderEntry type="library" name="sbt: co.fs2:fs2-io_2.13:2.3.0:jar" level="project" />
     <orderEntry type="library" name="sbt: com.chuusai:shapeless_2.13:2.3.3:jar" level="project" />
@@ -42,6 +45,7 @@
     <orderEntry type="library" name="sbt: com.thesamet.scalapb:lenses_2.13:0.10.9:jar" level="project" />
     <orderEntry type="library" name="sbt: com.thesamet.scalapb:scalapb-runtime-grpc_2.13:0.10.9:jar" level="project" />
     <orderEntry type="library" name="sbt: com.thesamet.scalapb:scalapb-runtime_2.13:0.10.9:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.typesafe.scala-logging:scala-logging_2.13:3.9.2:jar" level="project" />
     <orderEntry type="library" name="sbt: com.typesafe:config:1.4.0:jar" level="project" />
     <orderEntry type="library" name="sbt: com.zaxxer:HikariCP:3.4.2:jar" level="project" />
     <orderEntry type="library" name="sbt: eu.timepit:refined_2.13:0.9.13:jar" level="project" />
@@ -70,14 +74,12 @@
     <orderEntry type="library" name="sbt: org.jline:jline:3.15.0:jar" level="project" />
     <orderEntry type="library" name="sbt: org.postgresql:postgresql:42.2.12:jar" level="project" />
     <orderEntry type="library" name="sbt: org.scala-lang.modules:scala-collection-compat_2.13:2.1.6:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.scala-lang.modules:scala-parser-combinators_2.13:1.1.2:jar" level="project" />
     <orderEntry type="library" name="sbt: org.scala-lang.modules:scala-xml_2.13:1.2.0:jar" level="project" />
     <orderEntry type="library" name="sbt: org.scala-lang:scala-compiler:2.13.3:jar" level="project" />
     <orderEntry type="library" name="sbt: org.scala-lang:scala-library:2.13.3:jar" level="project" />
     <orderEntry type="library" name="sbt: org.scala-lang:scala-reflect:2.13.3:jar" level="project" />
     <orderEntry type="library" name="sbt: org.scodec:scodec-bits_2.13:1.1.14:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.slf4j:slf4j-api:1.7.30:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.slf4j:slf4j-jdk14:1.7.30:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.slf4j:slf4j-api:1.7.26:jar" level="project" />
     <orderEntry type="library" name="sbt: org.tpolecat:doobie-core_2.13:0.9.0:jar" level="project" />
     <orderEntry type="library" name="sbt: org.tpolecat:doobie-free_2.13:0.9.0:jar" level="project" />
     <orderEntry type="library" name="sbt: org.tpolecat:doobie-hikari_2.13:0.9.0:jar" level="project" />

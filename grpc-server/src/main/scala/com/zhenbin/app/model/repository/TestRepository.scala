@@ -1,5 +1,7 @@
 package com.zhenbin.app.model.repository
 
-trait TestRepository[M[_]] {
-  def getTestContent: M[Option[String]]
+import cats.effect.IO
+
+trait TestRepository {
+  def getTestContent: IO[Option[String]]
 }

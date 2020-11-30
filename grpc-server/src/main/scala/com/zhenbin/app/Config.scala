@@ -6,6 +6,7 @@ import pureconfig.ConfigSource.resources
 import pureconfig.error.ConfigReaderFailures
 
 case class Config(
+    server: ServerConfig,
     db: DBConfig
 )
 
