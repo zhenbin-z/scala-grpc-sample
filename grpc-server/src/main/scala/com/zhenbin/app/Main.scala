@@ -1,10 +1,9 @@
 package com.zhenbin.app
 
-import com.zhenbin.app.proto.hello.{HelloGrpc, HelloReply, HelloRequest}
 import io.grpc.Server
 import io.grpc.netty.NettyServerBuilder
-
 import scala.concurrent.{ExecutionContext, Future}
+import com.zhenbin.app.proto.hello.{HelloGrpc, HelloReply, HelloRequest}
 
 object Main {
   def main(args: Array[String]): Unit = {
