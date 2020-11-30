@@ -1,0 +1,15 @@
+.cache/*
+.ivy2/*
+!./sbt/sbt-launch-1.3.13.jar
+.sbt/*
+.idea
+.metals/*
+target/
+
+## generic files to ignore
+*.jar
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out

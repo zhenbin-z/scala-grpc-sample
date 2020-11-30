@@ -1,40 +1,30 @@
 package com.zhenbin.app
 
-import io.grpc.Server
+import cats.effect._
+import com.zhenbin.app.db.DB
+import io.grpc.ServerServiceDefinition
 import io.grpc.netty.NettyServerBuilder
-import scala.concurrent.{ExecutionContext, Future}
-import com.zhenbin.app.proto.hello.{HelloGrpc, HelloReply, HelloRequest}
+import scala.concurrent.ExecutionContext
+import com.zhenbin.app.proto.hello.HelloGrpc
 
 object Main {
   def main(args: Array[String]): Unit = {
     println("Hello, World!")
-    val server = new RpcServer(ExecutionContext.global)
-    server.start()
-    server.blockUntilShutdown()
-  }
 
-}
+    implicit val cs: ContextShift[IO] = IO.contextShift(ExecutionContext.global)
 
-class RpcServer(e: ExecutionContext) { self =>
-  private[this] var server: Server = null
+    val config = Config.load(None)
+    val transactor = DB.mkTransactor[IO](config.db)
+    transactor.use { xa =>
+      val app = new AppModule[IO](config, xa)
+      val helloService: ServerServiceDefinition =
+        HelloGrpc.bindService(app.helloGrpc, ExecutionContext.global)
 
-  def start(): Unit = {
-    server = NettyServerBuilder
-      .forPort(5001).addService(
-        HelloGrpc.bindService(new HelloImp, e)
-      ).build.start
-  }
+      NettyServerBuilder
+        .forPort(5001)
+        .addService(helloService).build.start.awaitTermination()
+      IO(ExitCode.Success)
+    }
 
-  def stop(): Unit =
-    if (server != null) server.shutdown()
-
-  def blockUntilShutdown(): Unit =
-    if (server != null) server.awaitTermination()
-}
-
-class HelloImp extends HelloGrpc.Hello {
-  override def sayHello(request: HelloRequest): Future[HelloReply] = {
-    println(request.name)
-    Future.successful(HelloReply(message = "grpc request ok."))
   }
 }

@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+  db:
+    image: postgres:11
+    container_name: db
+    environment:
+      POSTGRES_DB: local_db
+      POSTGRES_USER: local
+      POSTGRES_PASSWORD: local
+      POSTGRES_INITDB_ARGS: "--no-locale --encoding UTF-8"
+    ports:
+      - 5432:5432
+    volumes:
+      - ./data:/var/lib/postgresql/data
+
