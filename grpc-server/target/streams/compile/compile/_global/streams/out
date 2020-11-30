@@ -1,0 +1,7 @@
+[0m[[0m[31merror[0m] [0m[0m/Users/zhenbin.zhang/Documents/99_myself/project/scala/grpc/grpc-server/src/main/scala/com/zhenbin/app/Main.scala:12:12: method start in class RpcServer cannot be accessed as a member of com.zhenbin.app.RpcServer from object Main in package app[0m
+[0m[[0m[31merror[0m] [0m[0m    server.start()[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/zhenbin.zhang/Documents/99_myself/project/scala/grpc/grpc-server/src/main/scala/com/zhenbin/app/Main.scala:13:12: method blockUntilShutdown in class RpcServer cannot be accessed as a member of com.zhenbin.app.RpcServer from object Main in package app[0m
+[0m[[0m[31merror[0m] [0m[0m    server.blockUntilShutdown()[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
